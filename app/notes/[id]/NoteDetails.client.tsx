@@ -37,7 +37,7 @@ export default function NoteDetailsClient() {
         <div className={css.header}>
           <h2>{note.title}</h2>
         </div>
-        <p className={css.tag}>{note.tag || 'General'}</p>
+        <p className={css.tag}>{note.tag}</p>
         <p className={css.content}>{note.content}</p>
         <p className={css.date}>{new Date(note.createdAt).toLocaleDateString('uk-UA')}</p>
       </div>

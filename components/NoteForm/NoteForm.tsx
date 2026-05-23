@@ -3,11 +3,12 @@ import * as Yup from 'yup'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createNote } from '@/lib/api'
 import css from './NoteForm.module.css'
+import { NoteTag } from '@/types/note'
 
 interface NoteFormValues {
   title: string
-  content: string | null
-  tag: string
+  content: string | ''
+  tag: NoteTag
 }
 
 interface NoteFormProps {
@@ -54,7 +55,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
       onSubmit={values => {
         createNoteMutation.mutate({
           title: values.title,
-          content: values.content || null,
+          content: values.content || '',
           tag: values.tag,
         })
       }}
