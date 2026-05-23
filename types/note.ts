@@ -1,14 +1,16 @@
+export type NoteTag = 'Personal' | 'Work' | 'Home' | 'General'
+
 export interface Note {
   id: string
   title: string
   content: string
   createdAt: string
   updatedAt: string
-  tag: string
+  tag: NoteTag
 }
 
 export interface NoteInput {
   title: string
-  content: string | null
-  tag: string
+  content: string
+  tag: NoteTag
 }
