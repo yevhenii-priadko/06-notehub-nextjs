@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { Note, NoteInput, ResponseNotes } from '../types.ts/types'
+import type { Note, NoteInput, ResponseNotes } from '../types/types'
 
 const BASE_URL = 'https://notehub-public.goit.study/api/notes'
 
