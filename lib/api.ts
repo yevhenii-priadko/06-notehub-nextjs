@@ -1,16 +1,5 @@
 import axios from 'axios'
-import type { Note } from '../types/note'
-
-interface ResponseNotes {
-  notes: Note[]
-  totalPages: number
-}
-
-interface NoteInput {
-  title: string
-  content: string | null
-  tag: string
-}
+import type { Note, NoteInput, ResponseNotes } from '../types.ts/types'
 
 const BASE_URL = 'https://notehub-public.goit.study/api/notes'
 
@@ -37,5 +26,10 @@ export async function createNote(noteData: NoteInput): Promise<Note> {
 
 export async function deleteNote(id: string): Promise<Note> {
   const response = await axios.delete<Note>(`${BASE_URL}/${id}`, { headers })
+  return response.data
+}
+
+export async function fetchNoteById(id: string): Promise<Note> {
+  const response = await axios.get<Note>(`${BASE_URL}/${id}`, { headers })
   return response.data
 }

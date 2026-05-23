@@ -1,15 +1,18 @@
+'use client'
+
 import { useState } from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useDebouncedCallback } from 'use-debounce'
-import { fetchNotes } from '../../services/noteService'
-import NoteList from '../NoteList/NoteList'
-import Pagination from '../Pagination/Pagination'
-import SearchBox from '../SearchBox/SearchBox'
-import Modal from '../Modal/Modal'
-import NoteForm from '../NoteForm/NoteForm'
-import css from './App.module.css'
 
-export default function App() {
+import NoteList from '@/components/NoteList/NoteList'
+import Pagination from '@/components/Pagination/Pagination'
+import SearchBox from '@/components/SearchBox/SearchBox'
+import Modal from '@/components/Modal/Modal'
+import NoteForm from '@/components/NoteForm/NoteForm'
+import css from './notes.module.css'
+import { fetchNotes } from '@/lib/api'
+
+export default function NotesClient() {
   // Локальні стейти для керування параметрами пошуку, пагінації та модальним вікном
   const [localSearch, setLocalSearch] = useState<string>('') // Для миттєвого відображення в інпуті
   const [search, setSearch] = useState<string>('') // Рядок пошуку
