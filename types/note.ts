@@ -7,11 +7,6 @@ export interface Note {
   tag: string
 }
 
-export interface ResponseNotes {
-  notes: Note[]
-  totalPages: number
-}
-
 export interface NoteInput {
   title: string
   content: string | null

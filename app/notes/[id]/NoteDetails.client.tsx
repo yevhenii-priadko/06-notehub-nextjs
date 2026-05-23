@@ -17,6 +17,7 @@ export default function NoteDetailsClient() {
     queryKey: ['note', id],
     queryFn: () => fetchNoteById(id),
     enabled: !!id,
+    refetchOnMount: false,
   })
 
   // 1. Обробка стану завантаження строго за ТЗ
